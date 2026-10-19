@@ -1,0 +1,70 @@
+yorc-zig
+Copyright © 2026 Mark G. Bilby. Licensed under the MIT License
+(see LICENSE). https://github.com/mgbilby/yorc-zig
+
+Specifications
+--------------
+The model, readers, writers and checks are written from public specifications,
+following the behaviour of the Rust crate yorc-rs
+(https://github.com/mgbilby/yorc-rs, same copyright holder, MIT):
+  - ORCID Message Schema v3.0 (https://github.com/ORCID/orcid-model)
+  - ORCID iD structure and check digit, ISO/IEC 7064:2003 MOD 11-2
+    (https://support.orcid.org/hc/en-us/articles/360006897674)
+  - ORCID API documentation for the Public API and OAuth
+    (https://info.orcid.org/documentation/)
+  - XML 1.0 (Fifth Edition), W3C Recommendation
+No code was copied from other ORCID software. The library uses the Zig
+standard library only.
+
+Third-party material in this repository
+---------------------------------------
+None of it is in the package (`paths` in build.zig.zon lists build.zig,
+build.zig.zon, src/, README.md, CHANGELOG.md, BENCHMARKS.md, LICENSE and
+NOTICE); it is used by the tests only.
+
+testdata/record_3.0/, testdata/common_3.0/
+  The ORCID message schema v3.0 (record_3.0 XSDs and samples, and
+  common_3.0/common-3.0.xsd), copied unmodified from
+  https://github.com/ORCID/orcid-model at commit
+  9592e2d3bde21a1edf703f26f8bc304448f886fb.
+  Copyright © 2012-2018 ORCID, Inc. ORCID MIT-style license:
+  testdata/LICENSE-ORCID.
+
+testdata/group-id-3.0/group-id-3.0.xml
+  ORCID's group-id-3.0 sample, from the same commit and under the same
+  licence.
+
+Test data
+---------
+testdata/0000-0003-0100-6634.xml is the public ORCID record of
+0000-0003-0100-6634 as returned by https://pub.orcid.org/v3.0/. ORCID makes
+public record data available under CC0 1.0
+(https://info.orcid.org/documentation/integration-guide/orcid-public-data-file/).
+
+testdata/0000-0002-2771-9344.xml is the public ORCID record of
+0000-0002-2771-9344 (a fictitious person's record that ORCID uses as an
+example), as returned by https://pub.orcid.org/v3.0/0000-0002-2771-9344/record,
+unmodified (byte-identical to yorc-rs's tests/data/0000-0002-2771-9344.xml);
+CC0 1.0 like the record above. The walkthrough reads it.
+
+testdata/dump/orcid_test_summaries.tgz is a small archive in the layout of
+the ORCID Public Data File (byte-identical to yorc-duckdb's
+test/data/dump/orcid_test_summaries.tar.gz): the record above, the ORCID
+sample record-3.0.xml, a README and a member with a GNU long name.
+testdata/dump/orcid_test_two_members.tgz holds the ORCID sample record
+record-3.0.xml and a README in the same layout, gzipped as two concatenated
+members, for the multi-member gzip tests.
+
+testdata/changes/old.xml is the ORCID sample record record-3.0.xml
+(fictitious iD 8888-8888-8888-8880); new.xml is an edited copy of it. Both are
+copied from yorc-duckdb's test/data/changes. testdata/group-id-3.0/
+group-id-records.xml is the group-id-records page of yorc-duckdb's
+test/sql/orcid_api_messages.test.
+
+testdata/xsd_uncovered.txt is the same list as yorc-rs's
+tests/xsd_uncovered.txt.
+
+Trademarks
+----------
+ORCID is a trademark of ORCID, Inc. This library is not affiliated with or
+endorsed by ORCID, Inc.

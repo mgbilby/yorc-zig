@@ -1,0 +1,23 @@
+# Names declared by testdata/record_3.0/*.xsd and testdata/common_3.0/common-3.0.xsd
+# that have no model counterpart, with the reason (the same list as yorc-rs's
+# tests/xsd_uncovered.txt). tests/schema_test.zig fails if a declared name is
+# neither written by the model nor listed here, and also if a name listed here
+# becomes covered.
+#
+# Every entry is a global element of common-3.0.xsd (or an element local to a
+# common complexType) that no record_3.0 schema uses: the record schemas use
+# the *types* (fuzzy-date, orcid-id, contributor-role), or the elements belong
+# to other ORCID message schemas (notification_3.0, internal APIs).
+# 11 entries; every attribute is covered.
+
+common:application-group-orcid   # not referenced by any record_3.0 or notification_3.0 schema
+common:application-orcid         # not referenced by any record_3.0 or notification_3.0 schema
+common:approval-date             # not referenced by any record_3.0 or notification_3.0 schema
+common:archived-date             # notification_3.0 only (out of scope: record model)
+common:read-date                 # notification_3.0 only
+common:sent-date                 # notification_3.0 only
+common:group-orcid-identifier    # not referenced by any record_3.0 schema
+common:fuzzy-date                # global element; record schemas use the fuzzy-date type under other names (start-date, ...)
+common:orcid-id                  # global element; record schemas use the orcid-id type (orcid-identifier, source-orcid, ...)
+common:contributor-sequence      # local to common:contributor-attributes, which no record schema uses (work: and funding: define their own)
+common:contributor-role          # local to common:contributor-attributes (as above); work:/funding:contributor-role are covered

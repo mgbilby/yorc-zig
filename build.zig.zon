@@ -1,0 +1,24 @@
+.{
+    .name = .yorc,
+    .version = "0.1.0",
+    // yorc: Cultivate your research identity and networks.
+    // crc32("yorc") = 0xbd4a9781 in the upper 32 bits (computed with
+    // python3 -I -c 'import zlib; print(hex(zlib.crc32(b"yorc")))'),
+    // a random id in the lower 32. Changing this has security and trust
+    // implications.
+    .fingerprint = 0xbd4a978194314e65,
+    // A development snapshot is required: this is the exact `zig version`
+    // the code is written against. Moving to the next stable release is planned.
+    .minimum_zig_version = "0.18.0-dev.131+41f885830",
+    .dependencies = .{},
+    .paths = .{
+        "build.zig",
+        "build.zig.zon",
+        "src",
+        "README.md",
+        "CHANGELOG.md",
+        "BENCHMARKS.md",
+        "LICENSE",
+        "NOTICE",
+    },
+}
