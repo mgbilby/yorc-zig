@@ -2,8 +2,8 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Zig](https://img.shields.io/badge/Zig-0.18.0--dev.131-f7a41d)](#zig-version)
-[![CI](https://github.com/mgbilby/yorc-zig/actions/workflows/ci.yml/badge.svg)](https://github.com/mgbilby/yorc-zig/actions/workflows/ci.yml)
 [![vs yorc-rs](https://img.shields.io/badge/vs%20yorc--rs-byte--identical-brightgreen.svg)](BENCHMARKS.md#parity)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23570395.svg)](https://doi.org/10.5281/zenodo.23570395)
 
 ## Not affiliated with ORCID
 
